@@ -14,7 +14,7 @@ RUN apt-get update && \
 RUN	bash -c "echo 'deb https://qgis.org/debian bionic main' > /etc/apt/sources.list.d/qgis.list" && \
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-key CAEB3DC3BDF7FB45 && \
 	apt-get update && \
-	apt-get install -y --no-install-recommends qgis-server=1:3.0.3\* && \
+	apt-get install -y --no-install-recommends qgis-server=1:3.2.0\* && \
 	mkdir -p /qgis/plugins && \
 	mkdir -p /qgis/options && \
 	mkdir -p /qgis/cache && \
