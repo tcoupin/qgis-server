@@ -43,10 +43,11 @@
     	'transparent': true,
     	'tiled': false,
     	'info_format': 'text/html',
+    	'format': 'image/png',
     	attribution: '<a href="http://pro.ign.fr/adminexpress">IGN ADMIN EXPRESS &copy; </a>'
 	});
-	s.getLayer("Departement").addTo(mymap);
-	s.getLayer("Region").addTo(mymap);
+	s.getLayer("departement").addTo(mymap);
+	s.getLayer("region").addTo(mymap);
 	s.getLayer("map_variables_test").addTo(mymap);
 
 /*	L.tileLayer.wms('/ows', {

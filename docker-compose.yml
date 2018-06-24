@@ -12,5 +12,6 @@ services:
       QGIS_DEBUG: '0'
       QGIS_SERVER_LOG_FILE: '/tmp/qgis.log'
       QGIS_SERVER_LOG_LEVEL: "0"
+      QGIS_PROJECT_FILE: /project/project-3.2.qgz
 
 
