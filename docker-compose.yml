@@ -5,11 +5,12 @@ services:
     volumes:
       - ./project:/project
       - ./html:/var/www/html
+      - ./plugins:/qgis/plugins
     ports:
       - "8080:80"
     environment:
       QGIS_DEBUG: '0'
-      QGIS_LOG_FILE: '/tmp/qgis.log'
+      QGIS_SERVER_LOG_FILE: '/tmp/qgis.log'
       QGIS_SERVER_LOG_LEVEL: "0"
 
 

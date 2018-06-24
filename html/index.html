@@ -41,12 +41,13 @@
 	
 	var s = L.WMS.source("/ows", {
     	'transparent': true,
-    	'tiled': true,
+    	'tiled': false,
     	'info_format': 'text/html',
     	attribution: '<a href="http://pro.ign.fr/adminexpress">IGN ADMIN EXPRESS &copy; </a>'
 	});
 	s.getLayer("Departement").addTo(mymap);
 	s.getLayer("Region").addTo(mymap);
+	s.getLayer("map_variables_test").addTo(mymap);
 
 /*	L.tileLayer.wms('/ows', {
 		layers:'Admin',
