@@ -1,0 +1,26 @@
+[general]
+name=MapTipAsGetFeatureInfo
+qgisMinimumVersion=3.0
+qgisMaximumVersion=3.99
+description=Use maptip as GetFeatureInfo HTML
+version=1.0
+author=Thibault Coupin
+email=thibault.coupin@gmail.com
+; if True it's a server plugin
+server=True
+
+changelog=
+
+
+tags=variables, server
+
+tracker=https://github.com/tcoupin/qgis-MapTipAsGetFeatureInfo
+homepage=https://github.com/tcoupin/qgis-MapTipAsGetFeatureInfo
+repository=https://github.com/tcoupin/qgis-MapTipAsGetFeatureInfo
+
+category=server
+
+experimental=True
+
+about=Since HTML GetFeatureInfo response is not customizable (for the moment ;) ), this plugin replace the tables by the maptip of each layer.
+	The use a set of "replace" functions. If the HTML tables layouts change, the plugin may be unusable (see convertFeatureInfoHtml function of src/server/wms/qgswmsrenderer.cpp, https://github.com/qgis/QGIS/blob/6470aacb3397ba119b0d6c29b5c83e28ecedae31/src/server/services/wms/qgswmsrenderer.cpp#L1988).
