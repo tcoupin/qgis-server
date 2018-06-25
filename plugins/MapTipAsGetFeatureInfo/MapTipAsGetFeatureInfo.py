@@ -19,17 +19,17 @@ class MapTipAsGetFeatureInfoFilter(QgsServerFilter):
     def requestReady(self):
         request = self.serverInterface().requestHandler()
         params = request.parameterMap()
-        if (params.get('SERVICE').upper() == 'WMS' \
-                and params.get('REQUEST').upper() == 'GETFEATUREINFO' \
-                and "HTML" in params.get('INFO_FORMAT').upper()):
+        if (params.get('SERVICE') != None and params.get('SERVICE').upper() == 'WMS' \
+                and params.get('REQUEST') != None and params.get('REQUEST').upper() == 'GETFEATUREINFO' \
+                and params.get('INFO_FORMAT') != None and "HTML" in params.get('INFO_FORMAT').upper()):
             request.setParameter('WITH_MAPTIP','true')
 
     def responseComplete(self):
         request = self.serverInterface().requestHandler()
         params = request.parameterMap()
-        if (params.get('SERVICE').upper() == 'WMS' \
-                and params.get('REQUEST').upper() == 'GETFEATUREINFO' \
-                and "HTML" in params.get('INFO_FORMAT').upper()):
+        if (params.get('SERVICE') != None and params.get('SERVICE').upper() == 'WMS' \
+                and params.get('REQUEST') != None and params.get('REQUEST').upper() == 'GETFEATUREINFO' \
+                and params.get('INFO_FORMAT') != None and "HTML" in params.get('INFO_FORMAT').upper()):
             body = str(request.body().data(), encoding='utf-8')
 
             # Remove all newline

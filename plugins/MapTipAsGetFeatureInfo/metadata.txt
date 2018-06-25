@@ -3,7 +3,7 @@ name=MapTipAsGetFeatureInfo
 qgisMinimumVersion=3.0
 qgisMaximumVersion=3.99
 description=Use maptip as GetFeatureInfo HTML
-version=1.0
+version=1.1
 author=Thibault Coupin
 email=thibault.coupin@gmail.com
 ; if True it's a server plugin
