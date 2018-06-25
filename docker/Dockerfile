@@ -1,5 +1,6 @@
 FROM ubuntu:18.04
 
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
 	apt-get upgrade -y && \
@@ -14,7 +15,7 @@ RUN apt-get update && \
 RUN	bash -c "echo 'deb https://qgis.org/debian bionic main' > /etc/apt/sources.list.d/qgis.list" && \
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-key CAEB3DC3BDF7FB45 && \
 	apt-get update && \
-	apt-get install -y --no-install-recommends qgis-server=1:3.2.0\* && \
+	apt-get install -y --no-install-recommends qgis-server=1:3.2.0\* python-qgis=1:3.2.0\* && \
 	mkdir -p /qgis/plugins && \
 	mkdir -p /qgis/options && \
 	mkdir -p /qgis/cache && \
@@ -32,7 +33,6 @@ ENV APACHE_LOG_DIR ''
 ENV LANG C
 
 ENV QGIS_DEBUG 5
-ENV QGIS_LOG_FILE /dev/stdout
 ENV QGIS_SERVER_LOG_FILE /dev/stdout
 ENV QGIS_SERVER_LOG_LEVEL 5
 ENV PGSERVICEFILE ''
@@ -44,5 +44,6 @@ ENV QGIS_SERVER_MAX_THREADS -1
 ENV QGIS_SERVER_CACHE_DIRECTORY /qgis/cache
 ENV QGIS_SERVER_CACHE_SIZE 50
 ENV MAX_CACHE_LAYERS 100
+ENV QGIS_PREFIX_PATH /usr
 
 CMD /usr/sbin/apache2 -DFOREGROUND
