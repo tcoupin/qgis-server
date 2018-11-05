@@ -1,6 +1,9 @@
 FROM ubuntu:18.04
 
+ARG QGIS_VERSION=3.4.1
+
 ENV DEBIAN_FRONTEND noninteractive
+
 
 RUN apt-get update && \
 	apt-get upgrade -y && \
@@ -15,7 +18,7 @@ RUN apt-get update && \
 RUN	bash -c "echo 'deb https://qgis.org/debian bionic main' > /etc/apt/sources.list.d/qgis.list" && \
 	apt-key adv --keyserver keyserver.ubuntu.com --recv-key CAEB3DC3BDF7FB45 && \
 	apt-get update && \
-	apt-get install -y --no-install-recommends qgis-server=1:3.2.3\* python-qgis=1:3.2.3\* && \
+	apt-get install -y --no-install-recommends qgis-server=1:${QGIS_VERSION}\* python-qgis=1:${QGIS_VERSION}\* && \
 	mkdir -p /qgis/plugins && \
 	mkdir -p /qgis/options && \
 	mkdir -p /qgis/cache && \
