@@ -1,12 +1,18 @@
 # qgis-server
 Plugins and docker for qgis-server 3.*
-https://github.com/tcoupin/qgis-server
+https://gitlab.com/gred/qgis-server/
 
 Official doc: https://docs.qgis.org/testing/en/docs/user_manual/working_with_ogc/server/index.html
 
-## Plugins
+Image Docker : `registry.gitlab.com/gred/qgis-server`, liste des tags 
 
-TODO...
+## Mise à jour
+
+* Modifier la ligne `ARG QGIS_VERSION=3.4.1` dans le fichier `docker/Dockerfile`
+* `git add docker/Dockerfile && git commit -m "Update qgis 3.4.1"`
+* ajouter un tag au repo git : `git tag 3.4.1 `
+* `git push && git push --tags`
+* Vérifier le statut sur https://gitlab.com/gred/qgis-server/pipelines
 
 ## Docker & demo
 
